@@ -35,7 +35,7 @@ const displayHourlyForecast = (hourlyData) => {
 
         return `<li class="weather-item">
                     <p class="time">${time}</p>
-                    <img src="./image/${weatherIcon}.svg" class="weather-icon">
+                    <img src="./images/${weatherIcon}.svg" class="weather-icon">
                     <p class="temperature">${temperature}&deg;</p>
                 </li>`
     }).join("");
@@ -56,7 +56,7 @@ const getWeatherDetails = async (API_URL) => {
         const weatherIcon = Object.keys(weatherCodes).find(icon => weatherCodes[icon].includes(data.current.condition.code));
 
         // update the current weather display
-        currentWeatherDiv.querySelector(".weather-icon").src = `./image/${weatherIcon}.svg`;
+        currentWeatherDiv.querySelector(".weather-icon").src = `./images/${weatherIcon}.svg`;
         currentWeatherDiv.querySelector(".temperature").innerHTML = `${temperature}<span>&deg;C</span>`;
         currentWeatherDiv.querySelector(".description").innerHTML = description;
 
